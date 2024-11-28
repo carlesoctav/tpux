@@ -228,8 +228,8 @@ update_apt_commands = [
 install_packages_commands = [
     'sudo apt-get install -y -qq golang neofetch zsh byobu',
     'sudo apt-get install -y -qq software-properties-common',
-    'sudo add-apt-repository -y ppa:deadsnakes/ppa',
-    'sudo apt-get install -y -qq python3.12-full python3.12-dev',
+    # 'sudo add-apt-repository -y ppa:deadsnakes/ppa',
+    # 'sudo apt-get install -y -qq python3.12-full python3.12-dev',
 ]
 
 install_oh_my_zsh_commands = [
@@ -374,14 +374,14 @@ def setup_single_host() -> None:
 
 def setup_tpu_pod() -> None:
     check_is_not_root()
-    # check_tpu_chip_exists()
+    check_tpu_chip_exists()
 
     config_podips()
     generate_ssh_key()
 
     update_apt_on_hosts()
     install_packages_on_hosts()
-    install_oh_my_zsh_on_hosts()
+    # install_oh_my_zsh_on_hosts()
     install_nfs_on_hosts()
     insert_exports_config()
     config_nfs()
