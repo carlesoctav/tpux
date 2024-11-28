@@ -374,7 +374,7 @@ def setup_single_host() -> None:
 
 def setup_tpu_pod() -> None:
     check_is_not_root()
-    check_tpu_chip_exists()
+    # check_tpu_chip_exists()
 
     config_podips()
     generate_ssh_key()
